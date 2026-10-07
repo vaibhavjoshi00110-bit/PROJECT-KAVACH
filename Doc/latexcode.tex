@@ -1,0 +1,274 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[a4paper,left=2.0cm,right=2.0cm,top=1.55cm,bottom=1.55cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+
+% --- COLOURS ---
+\definecolor{TitleBlue}{RGB}{61,103,154}
+
+% --- GENERAL SETTINGS ---
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\renewcommand{\arraystretch}{1.0}
+
+\newcommand{\blueheading}[1]{%
+    {\sffamily\color{TitleBlue}\fontsize{15}{18}\selectfont #1}%
+}
+
+\newcommand{\bluebigheading}[1]{%
+    {\sffamily\bfseries\color{TitleBlue}\fontsize{16}{19}\selectfont #1}%
+}
+
+% FIXED: Removed \itshape from instruction text
+\newcommand{\instruction}[1]{%
+    {\fontsize{10.5}{12.5}\selectfont #1}%
+}
+
+\newcommand{\answerbox}[1]{%
+    \vspace{2pt}
+    \noindent
+    \fbox{%
+        \begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}
+            \vspace{2mm}
+            #1
+            \vspace{2mm}
+        \end{minipage}
+    }
+}
+
+% --- HEADER / FOOTER ---
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% FIXED: Removed \itshape from header and footer
+\fancyhead[L]{%
+    \sffamily\bfseries\fontsize{10.5}{12}\selectfont
+    TCS-302 DATA STRUCTURE AND TCS-307 OPPS WITH C++
+}
+\fancyhead[R]{%
+    \sffamily\bfseries\fontsize{10.5}{12}\selectfont
+    PROJECT PROPOSAL
+}
+\fancyfoot[R]{%
+    \fontsize{10}{12}\selectfont
+    Page \thepage
+}
+\setlength{\headheight}{14pt}
+\setlength{\headsep}{23pt}
+\setlength{\footskip}{24pt}
+
+% ================= PAGE 1 =================
+\begin{document}
+
+\vspace*{4mm}
+
+\bluebigheading{PROJECT AND TEAM INFORMATION}
+
+\vspace{13mm}
+
+\blueheading{Project Title}
+
+\vspace{1mm}
+
+\instruction{(Try to choose a catchy title. Max 20 words).}
+
+\answerbox{Project Kavach: Sovereign Real-Time Cybersecurity Posture Assessment Engine}
+
+\vspace{13mm}
+
+\blueheading{Student / Team Information}
+
+\vspace{2mm}
+
+\noindent
+\begin{tabularx}{\textwidth}{|>{\RaggedRight\arraybackslash}p{0.69\textwidth}|>{\RaggedRight\arraybackslash}X|}
+\hline
+\begin{minipage}[t]{\linewidth}
+\vspace{1.5mm}
+Team Name:\\[-1mm]
+Team \#
+\vspace{1.5mm}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}
+\vspace{1.5mm}
+xploit
+\vspace{1.5mm}
+\end{minipage}
+\\
+\hline
+\begin{minipage}[t][3.25cm][t]{\linewidth}
+\vspace{1.5mm}
+\textbf{Team member 1 (Team Lead)}\\[-1mm]
+(Last Name, name: student ID: email, picture):
+\vspace{2.0cm}
+\end{minipage}
+&
+\begin{minipage}[t][3.25cm][t]{\linewidth}
+\vspace{1.5mm}
+Joshi, Vaibhav -- 2510011374\\
+2510011374@geu.ac.in
+
+\vspace{2mm}
+\includegraphics[width=3.0cm,height=1.5cm,keepaspectratio]{vaibhav.jpeg}
+\end{minipage}
+\\
+\hline
+\begin{minipage}[t][3.25cm][t]{\linewidth}
+\vspace{1.5mm}
+\textbf{Team member 2}\\[-1mm]
+(Last Name, name: student ID: email, picture):
+\vspace{2.0cm}
+\end{minipage}
+&
+\begin{minipage}[t][3.25cm][t]{\linewidth}
+\vspace{1.5mm}
+Singh, Taranjot -- 2510010824\\
+2510010824@geu.ac.in
+
+\vspace{2mm}
+\includegraphics[width=3.0cm,height=1.5cm,keepaspectratio]{taran.jpeg}
+\end{minipage}
+\\
+\hline
+\begin{minipage}[t][3.25cm][t]{\linewidth}
+\vspace{1.5mm}
+\textbf{Team member 3}\\[-1mm]
+(Last Name, name: student ID: email, picture):
+\vspace{2.0cm}
+\end{minipage}
+&
+\begin{minipage}[t][3.25cm][t]{\linewidth}
+\vspace{1.5mm}
+Kholiya Singh, Nitin -- 25101210246\\
+25101210246@geu.ac.in
+
+\vspace{2mm}
+\includegraphics[width=3.0cm,height=1.5cm,keepaspectratio]{nitin.jpeg}
+\end{minipage}
+\\
+\hline
+\end{tabularx}
+
+\newpage
+
+% ================= PAGE 2 =================
+
+\bluebigheading{PROPOSAL DESCRIPTION (10 pts)}
+
+\vspace{12mm}
+
+\blueheading{Motivation (1 pt)}
+
+\vspace{1mm}
+
+\instruction{(Describe the problem you want to solve and why it is important. Max 300 words).}
+
+\answerbox{Modern web infrastructure is highly vulnerable to email spoofing, misconfigured DNS, and weak transport layer cryptography. Traditional vulnerability scanners are often bloated, slow, or rely heavily on third-party cloud APIs that compromise data sovereignty by exposing query targets. There is a critical need for a localized, lightning-fast diagnostic tool that can instantly evaluate a target's security posture---specifically checking SPF, DMARC, and TLS configurations---without relying on external servers or hallucination-prone AI models for raw factual data. Project Kavach solves this by providing a unified, secure, and offline-first local scanning solution.}
+
+\vspace{12mm}
+
+\blueheading{State of the Art / Current solution (1 pt)}
+
+\vspace{1mm}
+
+\instruction{(Describe how the problem is solved today (if it is). Max 200 words).}
+
+\answerbox{Currently, security analysts rely on standalone command-line tools like dig, nmap, or openssl directly within terminal environments like Kali Linux, requiring manual execution and parsing of complex outputs. Alternatively, they use cloud-based platforms (e.g., SSL Labs, SecurityTrails), which enforce rate limits and expose query targets to third parties. There is a significant gap in having an offline-first GUI dashboard that seamlessly automates these native Linux networking tools in the background while instantly rendering actionable intelligence.}
+
+\vspace{12mm}
+
+\blueheading{Project Goals and Milestones (2 pts)}
+
+\vspace{1mm}
+
+\instruction{(Describe the project general goals. Include initial milestones as well any other milestones. Max 300 words).}
+
+\answerbox{Our general goal is to develop a robust desktop application capable of executing parallel native Kali Linux commands with strict timeouts to prevent WAF tarpitting, while visualizing security scores asynchronously without freezing the UI. \\
+\vspace{2mm}
+\textbf{Milestones:} \\
+$\bullet$ \textbf{Phase 1:} Finalize C++ backend engine, OOP class structures, and Qt/QML UI architecture. \\
+$\bullet$ \textbf{Phase 2:} Integrate native 'dig' and 'openssl' bash commands with strict timeout execution, utilizing Data Structures (like Hash Maps) for efficient vulnerability mapping and parsing. \\
+$\bullet$ \textbf{Phase 3:} Develop the dynamic report generator and integrate the Groq API for isolated cybersecurity Q\&A. \\
+$\bullet$ \textbf{Phase 4:} End-to-end testing, memory optimization, and final project demonstration.}
+
+\newpage
+
+% ================= PAGE 3 =================
+
+\blueheading{Project Approach (3 pts)}
+
+\vspace{1mm}
+
+\instruction{(Describe how you plan to articulate and design a solution. Including platforms and technologies that you will use. Max 300 words).}
+
+\answerbox{The solution utilizes a hybrid architecture leveraging Object-Oriented Programming (OOP) in C++ for the backend and Qt/QML for the frontend dashboard. To ensure data sovereignty, the C++ QProcess class directly interfaces with native Kali Linux networking tools (dig, openssl). It executes timeout-bound bash commands to retrieve DNS, MX, TXT (SPF/DMARC), and TLS handshake data. \\
+\vspace{2mm}
+The results are parsed dynamically using Data Structures mapping and scored based on current cybersecurity standards (e.g., heavily penalizing TLSv1.2 or p=none policies). Instead of using external APIs for scanning, an AI assistant is integrated strictly for secondary user Q\&A, separating conversational intelligence from factual network scanning. File handling in C++ will be used for local logging and report generation.}
+
+\vspace{12mm}
+
+\blueheading{System Architecture (High Level Diagram)(2 pts)}
+
+\vspace{1mm}
+
+\instruction{(Provide an overview of the system, identifying its main components and interfaces in the form of a diagram using a tool of your choice).}
+
+\answerbox{
+    \vspace{2mm}
+    \centering
+    \includegraphics[width=0.85\textwidth,keepaspectratio]{pbldiagram.png} \\
+    \vspace{4mm}
+    The architecture consists of a QML Frontend passing target URLs to the C++ Engine. The C++ Engine invokes Bash Processes (dig, openssl) and applies OOPs/Data Structure logic to parse raw strings into a structured Report Hash Map, which is emitted back to the UI.
+}
+
+\newpage
+
+% ================= PAGE 4 =================
+
+\blueheading{Project Outcome / Deliverables (1 pts)}
+
+\vspace{1mm}
+
+\instruction{(Describe what are the outcomes / deliverables of the project. Max 200 words).}
+
+\answerbox{By the end of this project, we will deliver a fully functional, sovereign desktop application for Linux environments. The deliverables include the C++ source code, OOP class and data structure documentation, and a working compiled binary. The final demo will showcase a real-time dashboard displaying categorized security scores (Cryptography, Authentication), a detailed text-based posture report generated locally, and an integrated AI chat module functioning seamlessly without UI freezing.}
+
+\vspace{12mm}
+
+\blueheading{Assumptions}
+
+\vspace{6mm}
+
+\instruction{( Describe the assumptions ( if any ) you are making to solve the problem. Max 100 words )}
+
+\answerbox{We assume the application will be executed on a Linux-based operating system (preferably Kali Linux or Debian) with standard network diagnostic packages (bind9-dnsutils, openssl, bash, curl) accessible in the system path. Internet access is only required for the isolated AI Q\&A chat module.}
+
+\vspace{12mm}
+
+\blueheading{References}
+
+\vspace{1mm}
+
+\instruction{(Provide a list of resources or references you utilised for the completion of this deliverable. You may provide links).}
+
+\answerbox{
+$\bullet$ Qt 6 Documentation (C++ and QML asynchronous integration): https://doc.qt.io/ \\
+$\bullet$ OpenSSL s\_client manual and cryptographic standards \\
+$\bullet$ RFC 7489 (DMARC) and RFC 7208 (SPF) protocol specifications \\
+$\bullet$ Data Structures and Algorithm Analysis in C++ (Mark Allen Weiss) \\
+$\bullet$ Groq API Documentation for LLM integration
+}
+
+\end{document}

@@ -476,7 +476,7 @@ Rectangle {
             valDnsCrypto.text = "CAA: " + results.caa + " | MTA-STS: " + results.mta_sts + " | TLSA: " + results.tlsa
         }
         function onChatMessageReceived(sender, message) {
-            // 🔥 FIX: <hr> removed entirely. Using <br><br> for clean spacing between messages.
+            // FIX: <hr> removed entirely. Using <br><br> for clean spacing between messages.
             if(sender === "GEMINI") {
                 chatLog.append("<br><font color='#10b981'><b>[KAVACH AI]</b></font><br>" + message + "<br><br>")
             } else if (sender === "SYSTEM") {

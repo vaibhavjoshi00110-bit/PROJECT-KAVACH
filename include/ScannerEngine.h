@@ -1,28 +1,34 @@
 #ifndef SCANNERENGINE_H
 #define SCANNERENGINE_H
-
 #include <QObject>
 #include <QString>
 #include <QVariantMap>
-#include <QNetworkAccessManager>
-#include <QJsonArray>
-
-class ScannerEngine : public QObject {
-    Q_OBJECT
-public:
-    explicit ScannerEngine(QObject *parent = nullptr);
-    
-    Q_INVOKABLE void startScan(const QString &domain);
-    Q_INVOKABLE void askGemini(const QString &userMessage);
-
-signals:
-    void scanProgress(int percent, const QString &status);
-    void scanComplete(QVariantMap results);
-    void chatMessageReceived(const QString &sender, const QString &message);
-
-private:
-    QNetworkAccessManager *networkManager;
-    QString lastScanContext;
+#include <QVariantList>
+#include <string>
+#include <deque>
+using namespace std;
+struct DataNode{
+string toolName;
+string toolResult;
+DataNode* next;
 };
-
-#endif // SCANNERENGINE_H
+class ScannerEngine : public QObject {
+Q_OBJECT
+public:
+explicit ScannerEngine(QObject *parent = nullptr);
+~ScannerEngine();
+Q_INVOKABLE void startScan(const QString &domain);
+Q_INVOKABLE void wipeMemory();
+Q_INVOKABLE QVariantList getHistoryList();
+Q_INVOKABLE void removeHistoryItem(int index);
+signals:
+void scanProgress(int percent, const QString &status);
+void scanComplete(QVariantMap results);
+private:
+DataNode* head;
+deque<string> searchHistory;
+void addData(string name, string res);
+string execCmd(string cmd);
+void clearRam();
+};
+#endif

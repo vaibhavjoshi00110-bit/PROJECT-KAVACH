@@ -116,7 +116,7 @@ Kavach requires a Linux environment with Qt6 and essential build tools. To deplo
 
 ```bash
 # 1. Install prerequisites (Debian/Kali based)
-sudo apt update && sudo apt install build-essential cmake qt6-base-dev qt6-declarative-dev libsqlite3-dev
+sudo apt install build-essential cmake qt6-base-dev qt6-declarative-dev libsqlite3-dev
 
 # 2. Clone the master repository to the local secure machine
 git clone [https://github.com/vaibhavjoshi00110-bit/PROJECT-KAVACH.git](https://github.com/vaibhavjoshi00110-bit/PROJECT-KAVACH.git)

@@ -115,21 +115,10 @@ Kavach is designed with a strictly isolated **Three-Tier Architecture**, decoupl
 Kavach requires a Linux environment with Qt6 and essential build tools. To deploy Kavach on a secure terminal (`vaibhav@kali`), execute the following directives:
 
 ```bash
-# 1. Install prerequisites (Debian/Kali based)
-sudo apt install build-essential cmake qt6-base-dev qt6-declarative-dev libsqlite3-dev
-
-# 2. Clone the master repository to the local secure machine
-git clone [https://github.com/vaibhavjoshi00110-bit/PROJECT-KAVACH.git](https://github.com/vaibhavjoshi00110-bit/PROJECT-KAVACH.git)
+git clone https://github.com/vaibhavjoshi00110-bit/PROJECT-KAVACH.git
 cd PROJECT-KAVACH
-
-# 3. Initialize an isolated build environment
-mkdir build && cd build
-
-# 4. Generate CMake Makefiles (Release Mode for Maximum Optimization)
+mkdir build
+cd build
 cmake -DCMAKE_BUILD_TYPE=Release ..
-
-# 5. Compile utilizing all available CPU threads (-O3 optimization applied)
 make -j$(nproc)
-
-# 6. Execute the Kavach Engine locally
 ./KavachApp

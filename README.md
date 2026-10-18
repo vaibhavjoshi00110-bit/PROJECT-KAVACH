@@ -112,7 +112,7 @@ Kavach is designed with a strictly isolated **Three-Tier Architecture**, decoupl
 
 ## 💻 8. Advanced Deployment & Compilation Directives
 
-Kavach requires a Linux environment with Qt6 and essential build tools. To deploy Kavach on a secure terminal (`vaibhav@kali`), execute the following directives:
+Kavach requires a Linux environment with Qt6 and essential build tools. To deploy Kavach on a secure terminal execute the following directives:
 
 ```bash
 git clone https://github.com/vaibhavjoshi00110-bit/PROJECT-KAVACH.git
